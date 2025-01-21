@@ -1,0 +1,23 @@
+name: Build APK
+on:
+  push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '8.x'
+
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.5.4'
+
+      - run: flutter pub get
+
+      # - run: flutter analyze TODO: enable after fixing the issues in code
+
+      - run: flutter test
