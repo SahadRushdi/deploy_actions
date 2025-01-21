@@ -24,3 +24,10 @@ jobs:
 
       - name: Build Android Packages
         run: flutter build apk
+
+      - name: Upload Android debug artifacts
+        if: ${{ env.BUILD_MODE == 'debug' }}
+        uses: actions/upload-artifact@v1
+        with:
+          name: android_debug
+          path: "build/app/outputs/flutter-apk/app-release.apk"
