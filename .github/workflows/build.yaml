@@ -21,3 +21,6 @@ jobs:
       # - run: flutter analyze TODO: enable after fixing the issues in code
 
       - run: flutter test
+
+      - name: Build Android Packages
+        run: flutter build apk
