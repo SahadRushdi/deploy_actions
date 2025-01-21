@@ -44,6 +44,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: "/"
+          artifacts: "android_debug/*.apk"
           name: Release Apk
           token: ${{ secrets.GITHUB_TOKEN }}
